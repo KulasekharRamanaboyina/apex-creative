@@ -31,16 +31,16 @@ const STAGES = [
 
 export const Methodology: React.FC = () => {
   return (
-    <section id="methodology" className="py-24 bg-[#FCFCFD] text-[#0B0B0F] relative border-t border-[#0B0B0F]/10">
+    <section id="methodology" className="py-24 bg-[#f5f3ef] text-[#080908] relative border-t border-[#080908]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-20">
           <BrandTaglinePill size="sm" className="mb-4" />
-          <h2 className="text-3xl sm:text-5xl font-heading font-black tracking-tight text-[#0B0B0F]">
+          <h2 className="text-3xl sm:text-5xl font-heading font-black tracking-tight text-[#080908]">
             THE APEX <span className="apex-gradient-text">METHODOLOGY</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#0B0B0F]/70 max-w-2xl">
+          <p className="mt-4 text-base sm:text-lg text-[#080908]/70 max-w-2xl">
             A 4-stage engineered framework ensuring nothing is accidental and every visual decision commands attention.
           </p>
         </div>
@@ -55,27 +55,27 @@ export const Methodology: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-3xl p-8 border border-[#0B0B0F]/10 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative group"
+                className="bg-[#f5f3ef] rounded-3xl p-8 border border-[#080908]/10 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-4xl font-heading font-black text-[#0B0B0F]/20 group-hover:text-[#F31A3E] transition-colors">
+                    <span className="text-4xl font-heading font-black text-[#080908]/20 group-hover:text-[#ffc900] transition-colors">
                       {stage.step}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-heading font-bold text-[#0B0B0F] mb-3">
+                  <h3 className="text-xl font-heading font-bold text-[#080908] mb-3">
                     {stage.title}
                   </h3>
 
-                  <p className="text-sm text-[#0B0B0F]/70 font-sans leading-relaxed mb-6">
+                  <p className="text-sm text-[#080908]/70 font-sans leading-relaxed mb-6">
                     {stage.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#0B0B0F]/10 flex flex-wrap gap-1.5">
+                <div className="pt-4 border-t border-[#080908]/10 flex flex-wrap gap-1.5">
                   {stage.tags.map((tag, i) => (
-                    <span key={i} className="px-2.5 py-1 rounded-md bg-[#0B0B0F]/5 text-[10px] font-mono font-semibold text-[#0B0B0F]/70">
+                    <span key={i} className="px-2.5 py-1 rounded-md bg-[#080908]/5 text-[10px] font-mono font-semibold text-[#080908]/70">
                       {tag}
                     </span>
                   ))}

@@ -27,18 +27,18 @@ const TESTIMONIALS = [
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-24 bg-[#FCFCFD] text-[#0B0B0F] relative">
+    <section id="testimonials" className="py-24 bg-[#f5f3ef] text-[#080908] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0B0B0F]/5 text-xs font-mono font-bold uppercase tracking-widest text-[#F31A3E] mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#080908]/5 text-xs font-mono font-bold uppercase tracking-widest text-[#ffc900] mb-4">
             <span>Enterprise Impact</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-heading font-black tracking-tight text-[#0B0B0F]">
+          <h2 className="text-3xl sm:text-5xl font-heading font-black tracking-tight text-[#080908]">
             TRUSTED BY <span className="apex-gradient-text">INDUSTRY LEADERS</span>
           </h2>
-          <p className="mt-4 text-base text-[#0B0B0F]/70">
+          <p className="mt-4 text-base text-[#080908]/70">
             Hear from executive stakeholders who transformed their global brand presence with APEX CREATIVE.
           </p>
         </div>
@@ -52,28 +52,28 @@ export const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-3xl p-8 border border-[#0B0B0F]/10 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+              className="bg-[#f5f3ef] rounded-3xl p-8 border border-[#080908]/10 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="text-xs font-mono font-bold tracking-widest text-[#FB5521] mb-6">
+                <div className="text-xs font-mono font-bold tracking-widest text-[#ffc900] mb-6">
                   ★★★★★ 5.0
                 </div>
 
-                <p className="text-sm text-[#0B0B0F]/80 font-sans leading-relaxed italic mb-8">
+                <p className="text-sm text-[#080908]/80 font-sans leading-relaxed italic mb-8">
                   "{t.quote}"
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-[#0B0B0F]/10 flex items-center gap-4">
+              <div className="pt-6 border-t border-[#080908]/10 flex items-center gap-4">
                 <img
                   src={t.avatar}
                   alt={t.author}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-[#F31A3E]"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-[#ffc900]"
                 />
                 <div>
-                  <h4 className="text-sm font-heading font-bold text-[#0B0B0F]">{t.author}</h4>
-                  <p className="text-xs text-[#0B0B0F]/60 font-sans">{t.role}</p>
-                  <span className="text-[11px] font-mono text-[#7A2397] font-semibold">{t.company}</span>
+                  <h4 className="text-sm font-heading font-bold text-[#080908]">{t.author}</h4>
+                  <p className="text-xs text-[#080908]/60 font-sans">{t.role}</p>
+                  <span className="text-[11px] font-mono text-[#ffc900] font-semibold">{t.company}</span>
                 </div>
               </div>
             </motion.div>

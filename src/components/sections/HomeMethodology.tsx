@@ -18,18 +18,18 @@ export const HomeMethodology: React.FC = () => {
   const selectedStep = STAGES.find(s => s.step === activeStep) || STAGES[0];
 
   return (
-    <section className="py-24 bg-[#FCFCFD] text-[#0B0B0F] relative border-t border-[#0B0B0F]/10">
+    <section className="py-24 bg-[#f5f3ef] text-[#080908] relative border-t border-[#080908]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#F31A3E] block mb-2">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#ffc900] block mb-2">
             Engineered Process Framework
           </span>
-          <h2 className="text-3xl sm:text-5xl font-heading font-black tracking-tight text-[#0B0B0F]">
+          <h2 className="text-3xl sm:text-5xl font-heading font-black tracking-tight text-[#080908]">
             THE APEX <span className="apex-gradient-text">METHODOLOGY</span>
           </h2>
-          <p className="mt-4 text-base text-[#0B0B0F]/70 font-sans">
+          <p className="mt-4 text-base text-[#080908]/70 font-sans">
             A 5-stage framework designed to eliminate guesswork, enforce visual discipline, and deliver measurable growth.
           </p>
         </div>
@@ -44,11 +44,11 @@ export const HomeMethodology: React.FC = () => {
                 onClick={() => setActiveStep(s.step)}
                 className={`p-4 rounded-2xl border text-left transition-all duration-300 flex flex-col justify-between min-h-[100px] cursor-pointer ${
                   isActive
-                    ? 'bg-[#0B0B0F] text-[#FCFCFD] border-[#0B0B0F] shadow-lg -translate-y-0.5'
-                    : 'bg-white text-[#0B0B0F] border-[#0B0B0F]/10 hover:bg-[#0B0B0F]/5'
+                    ? 'bg-[#080908] text-[#f5f3ef] border-[#080908] shadow-lg -translate-y-0.5'
+                    : 'bg-[#f5f3ef] text-[#080908] border-[#080908]/10 hover:bg-[#080908]/5'
                 }`}
               >
-                <span className={`text-xl font-heading font-black ${isActive ? 'text-[#F31A3E]' : 'text-[#0B0B0F]/40'}`}>
+                <span className={`text-xl font-heading font-black ${isActive ? 'text-[#ffc900]' : 'text-[#080908]/40'}`}>
                   {s.step}
                 </span>
                 <span className="text-xs font-heading font-bold uppercase tracking-wider block mt-2">
@@ -65,21 +65,21 @@ export const HomeMethodology: React.FC = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="p-8 sm:p-10 rounded-3xl bg-white border border-[#0B0B0F]/10 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
+          className="p-8 sm:p-10 rounded-3xl bg-[#f5f3ef] border border-[#080908]/10 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
         >
           <div className="space-y-3 max-w-2xl">
             <div>
-              <span className="text-xs font-mono font-bold text-[#7A2397] uppercase">Stage {selectedStep.step}</span>
-              <h3 className="text-2xl sm:text-3xl font-heading font-black text-[#0B0B0F]">{selectedStep.name}</h3>
+              <span className="text-xs font-mono font-bold text-[#ffc900] uppercase">Stage {selectedStep.step}</span>
+              <h3 className="text-2xl sm:text-3xl font-heading font-black text-[#080908]">{selectedStep.name}</h3>
             </div>
-            <p className="text-xs font-mono font-bold text-[#0B0B0F]/60 uppercase">{selectedStep.subtitle}</p>
-            <p className="text-sm text-[#0B0B0F]/80 font-sans leading-relaxed">{selectedStep.desc}</p>
+            <p className="text-xs font-mono font-bold text-[#080908]/60 uppercase">{selectedStep.subtitle}</p>
+            <p className="text-sm text-[#080908]/80 font-sans leading-relaxed">{selectedStep.desc}</p>
           </div>
 
           <div className="shrink-0">
             <Link
               href="/approach"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0B0B0F] text-[#FCFCFD] text-xs font-heading font-bold uppercase tracking-wider hover:bg-[#7A2397] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#080908] text-[#f5f3ef] text-xs font-heading font-bold uppercase tracking-wider hover:bg-[#ffc900] hover:text-[#080908] transition-colors"
             >
               <span>Explore All 5 Stages</span>
             </Link>

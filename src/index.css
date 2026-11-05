@@ -1,32 +1,224 @@
 @import "tailwindcss";
 
 @theme {
-  --color-apex-crimson: #F31A3E;
-  --color-apex-magenta: #DC175B;
-  --color-apex-purple: #7A2397;
-  --color-apex-blue: #1D16EF;
-  --color-apex-orange: #FB5521;
-  --color-apex-teal: #03A7AE;
-  --color-apex-black: #0B0B0F;
-  --color-apex-white: #FCFCFD;
+  --color-apex-gold: #ffc900;
+  --color-apex-black: #080908;
+  --color-apex-white: #f5f3ef;
 
   --font-display: Montserrat, sans-serif;
   --font-sans: Inter, sans-serif;
 }
 
 :root {
-  --apex-crimson: #F31A3E;
-  --apex-magenta: #DC175B;
-  --apex-purple: #7A2397;
-  --apex-blue: #1D16EF;
-  --apex-orange: #FB5521;
-  --apex-teal: #03A7AE;
-  --apex-black: #0B0B0F;
-  --apex-white: #FCFCFD;
-  
-  --signature-gradient: linear-gradient(135deg, #F31A3E 0%, #DC175B 33%, #7A2397 66%, #1D16EF 100%);
-  --signature-gradient-h: linear-gradient(90deg, #F31A3E 0%, #DC175B 33%, #7A2397 66%, #1D16EF 100%);
-  --signature-gradient-subtle: linear-gradient(135deg, rgba(243, 26, 62, 0.08) 0%, rgba(220, 23, 91, 0.08) 33%, rgba(122, 35, 151, 0.08) 66%, rgba(29, 22, 239, 0.08) 100%);
+  --apex-gold: #ffc900;
+  --apex-black: #080908;
+  --apex-white: #f5f3ef;
+
+  --signature-gradient: linear-gradient(135deg, #ffc900 0%, #ffc900 33%, #ffc900 66%, #ffc900 100%);
+  --signature-gradient-h: linear-gradient(90deg, #ffc900 0%, #ffc900 33%, #ffc900 66%, #ffc900 100%);
+  --signature-gradient-subtle: linear-gradient(135deg, rgba(255, 201, 0, 0.08) 0%, rgba(255, 201, 0, 0.08) 33%, rgba(255, 201, 0, 0.08) 66%, rgba(255, 201, 0, 0.08) 100%);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --apex-black: #f5f3ef;
+  --apex-white: #080908;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+.apex-hero-frame {
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+
+.apex-hero-title {
+  font-size: clamp(3.25rem, min(11.4vw, 14svh), 10.5rem);
+}
+
+.apex-footer-backdrop {
+  background-image: linear-gradient(135deg, #f5f3ef 0%, #f1eee5 52%, #eee5c9 100%);
+}
+
+.apex-footer-backtop,
+.apex-footer-section-title {
+  color: #ffc900 !important;
+  -webkit-text-fill-color: #ffc900 !important;
+}
+
+.apex-footer-social,
+.apex-footer-backtop {
+  background-color: #ffc900 !important;
+}
+
+.apex-footer-social {
+  color: #080908 !important;
+  -webkit-text-fill-color: #080908 !important;
+}
+
+.apex-footer-social svg {
+  fill: currentColor;
+}
+
+.apex-footer-social:hover {
+  color: #080908 !important;
+  -webkit-text-fill-color: #080908 !important;
+  background-color: #e6b600 !important;
+}
+
+.apex-footer-backtop {
+  color: #080908 !important;
+  -webkit-text-fill-color: #080908 !important;
+}
+
+.apex-footer-backtop:hover {
+  background-color: #e6b600 !important;
+}
+
+:root[data-theme='dark'] .apex-footer {
+  background-color: #080908 !important;
+  background-image: linear-gradient(135deg, #080908 0%, #111109 48%, #201b08 100%);
+  color: #f5f3ef;
+}
+
+:root[data-theme='dark'] .apex-footer [class*="text-[#f5f3ef]"],
+:root[data-theme='dark'] .apex-footer [class~="text-white"],
+:root[data-theme='dark'] .apex-footer [class*="text-[#080908]"] {
+  color: #f5f3ef !important;
+  -webkit-text-fill-color: #f5f3ef;
+}
+
+:root[data-theme='dark'] .apex-footer [class*="bg-[#ffc900]"] {
+  color: #080908 !important;
+}
+
+:root[data-theme='dark'] .apex-footer [class*="bg-[#ffc900]"] * {
+  color: #080908 !important;
+}
+
+:root[data-theme='dark'] .apex-footer .apex-gradient-bg,
+:root[data-theme='dark'] .apex-footer .apex-gradient-bg * {
+  color: #080908 !important;
+  -webkit-text-fill-color: #080908;
+}
+
+:root[data-theme='dark'] .apex-footer [class*="hover:text-[#080908]"]:hover {
+  color: #080908 !important;
+}
+
+:root[data-theme='light'] .apex-footer {
+  background-color: #f5f3ef !important;
+  color: #080908;
+}
+
+:root[data-theme='light'] .apex-footer [class*="text-[#f5f3ef]"],
+:root[data-theme='light'] .apex-footer [class~="text-white"] {
+  color: #080908 !important;
+  -webkit-text-fill-color: #080908;
+}
+
+:root[data-theme='light'] .apex-footer [class*="bg-[#f5f3ef]/10"] {
+  background-color: rgb(8 9 8 / 8%) !important;
+}
+
+:root[data-theme='light'] .apex-footer [class*="border-white"] {
+  border-color: rgb(8 9 8 / 14%) !important;
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .apex-hero-frame {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+  }
+
+  .apex-hero-content {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+:root[data-theme='dark'] [class~="bg-[#f5f3ef]"] {
+  background-color: #080908 !important;
+}
+
+:root[data-theme='dark'] [class~="bg-[#080908]"] {
+  background-color: #f5f3ef !important;
+}
+
+:root[data-theme='dark'] [class*="bg-[#f5f3ef]/95"],
+:root[data-theme='dark'] [class*="bg-[#f5f3ef]/98"] {
+  background-color: rgb(8 9 8 / 92%) !important;
+}
+
+:root[data-theme='dark'] [class*="bg-[#f5f3ef]/10"] {
+  background-color: rgb(8 9 8 / 10%) !important;
+}
+
+:root[data-theme='dark'] [class*="bg-[#f5f3ef]/15"] {
+  background-color: rgb(8 9 8 / 15%) !important;
+}
+
+:root[data-theme='dark'] [class*="bg-[#f5f3ef]/20"] {
+  background-color: rgb(8 9 8 / 20%) !important;
+}
+
+:root[data-theme='dark'] [class*="text-[#080908]"] {
+  color: #f5f3ef !important;
+  -webkit-text-fill-color: #f5f3ef;
+}
+
+:root[data-theme='dark'] [class*="text-[#f5f3ef]"] {
+  color: #080908 !important;
+  -webkit-text-fill-color: #080908;
+}
+
+:root[data-theme='dark'] [class~="bg-[#080908]"][class*="text-[#f5f3ef]"] {
+  color: #080908 !important;
+}
+
+:root[data-theme='dark'] .apex-gradient-bg {
+  color: #080908 !important;
+}
+
+:root[data-theme='dark'] .apex-gradient-bg * {
+  color: #080908 !important;
+}
+
+:root[data-theme='dark'] [class*="bg-[#ffc900]"] {
+  color: #080908 !important;
+}
+
+:root[data-theme='dark'] [class*="bg-[#ffc900]"] * {
+  color: #080908 !important;
+}
+
+:root[data-theme='dark'] [class*="hover:text-[#080908]"]:hover {
+  color: #080908 !important;
+}
+
+:root[data-theme='dark'] [class*="border-[#080908]"] {
+  border-color: rgb(245 243 239 / 20%) !important;
+}
+
+:root[data-theme='dark'] [class*="border-[#f5f3ef]"] {
+  border-color: rgb(8 9 8 / 20%) !important;
+}
+
+:root[data-theme='dark'] .services-pillar-capsule {
+  color: #ffc900 !important;
+  -webkit-text-fill-color: #ffc900 !important;
+  background-color: #171917 !important;
+  border-color: rgb(245 243 239 / 20%) !important;
+}
+
+:root[data-theme='dark'] .services-pillar-capsule:hover {
+  color: #ffc900 !important;
+  -webkit-text-fill-color: #ffc900 !important;
+  background-color: #080908 !important;
+  border-color: #ffc900 !important;
 }
 
 body {
@@ -52,6 +244,11 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .apex-gradient-bg {
   background: var(--signature-gradient);
+  color: #080908;
+}
+
+.apex-gradient-bg * {
+  color: #080908;
 }
 
 .apex-gradient-border {
@@ -72,17 +269,17 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .apex-glass-panel {
-  background: rgba(252, 252, 253, 0.85);
+  background: rgba(245, 243, 239, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(11, 11, 15, 0.08);
+  border: 1px solid rgba(8, 9, 8, 0.08);
 }
 
 .apex-glass-dark {
-  background: rgba(11, 11, 15, 0.88);
+  background: rgba(8, 9, 8, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(252, 252, 253, 0.12);
+  border: 1px solid rgba(245, 243, 239, 0.12);
 }
 
 /* Clear Space Rules for Logo Container */
@@ -157,7 +354,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .apex-animated-gradient {
-  background: linear-gradient(90deg, #F31A3E, #DC175B, #7A2397, #1D16EF, #F31A3E);
+  background: linear-gradient(90deg, #ffc900, #ffc900, #ffc900, #ffc900, #ffc900);
   background-size: 300% 300%;
   animation: gradientShift 8s linear infinite;
 }
@@ -167,12 +364,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FCFCFD;
+  background: #f5f3ef;
 }
 ::-webkit-scrollbar-thumb {
-  background: #7A2397;
+  background: #ffc900;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F31A3E;
+  background: #ffc900;
 }

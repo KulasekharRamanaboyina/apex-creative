@@ -6,14 +6,14 @@ import { motion, useMotionValue, useSpring, useMotionTemplate, useTransform } fr
 
 export const LandingHero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const mouseRef = useRef({ 
-    x: -1000, 
-    y: -1000, 
-    prevX: -1000, 
-    prevY: -1000, 
-    vx: 0, 
-    vy: 0, 
-    isHovered: false 
+  const mouseRef = useRef({
+    x: -1000,
+    y: -1000,
+    prevX: -1000,
+    prevY: -1000,
+    vx: 0,
+    vy: 0,
+    isHovered: false
   });
 
   // Dynamic Cursor-Tracking Ambient Spotlight Aura
@@ -30,7 +30,7 @@ export const LandingHero: React.FC = () => {
   const tiltX = useTransform(smoothY, [0, 800], [2.5, -2.5]);
   const tiltY = useTransform(smoothX, [0, 1400], [-2.5, 2.5]);
 
-  const spotlightBackground = useMotionTemplate`radial-gradient(600px circle at ${smoothX}px ${smoothY}px, rgba(243, 26, 62, 0.12), rgba(122, 35, 151, 0.08), rgba(3, 167, 174, 0.05), transparent 70%)`;
+  const spotlightBackground = useMotionTemplate`radial-gradient(600px circle at ${smoothX}px ${smoothY}px, rgba(255, 201, 0, 0.12), rgba(255, 201, 0, 0.08), rgba(255, 201, 0, 0.05), transparent 70%)`;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -71,18 +71,25 @@ export const LandingHero: React.FC = () => {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    let width = 0;
+    let height = 0;
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 
     const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      const bounds = canvas.getBoundingClientRect();
+      width = bounds.width;
+      height = bounds.height;
+      canvas.width = Math.round(width * pixelRatio);
+      canvas.height = Math.round(height * pixelRatio);
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
     };
+    handleResize();
     window.addEventListener('resize', handleResize);
+    const resizeObserver = new ResizeObserver(handleResize);
+    resizeObserver.observe(canvas.parentElement ?? canvas);
 
     // Official APEX Signature Palette Nodes
-    const colors = ['#F31A3E', '#DC175B', '#7A2397', '#1D16EF', '#FB5521', '#03A7AE'];
+    const colors = ['#ffc900', '#ffc900', '#ffc900', '#ffc900', '#ffc900', '#ffc900'];
 
     const particles: Array<{
       x: number;
@@ -168,19 +175,20 @@ export const LandingHero: React.FC = () => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      resizeObserver.disconnect();
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
-    <section 
+    <section
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative pt-20 pb-16 sm:pt-24 sm:pb-20 overflow-hidden bg-[#FCFCFD] text-[#0B0B0F] min-h-[100dvh] lg:h-[100dvh] flex flex-col justify-center items-center"
+      className="apex-hero-frame relative flex flex-col items-center justify-center overflow-hidden bg-[#f5f3ef] pb-8 pt-20 text-[#080908] sm:pb-12 sm:pt-24"
     >
-      
+
       {/* Precision Blueprint Micro-Grid Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(#0B0B0F_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.035] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#080908_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.035] pointer-events-none" />
 
       {/* Dynamic Cursor Spotlight Ambient Overlay */}
       <motion.div
@@ -192,88 +200,64 @@ export const LandingHero: React.FC = () => {
       />
 
       {/* 60FPS Dynamic Ambient Particle Canvas */}
-      <canvas 
-        ref={canvasRef} 
-        className="absolute inset-0 pointer-events-none z-0 opacity-90"
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 h-full w-full pointer-events-none z-0 opacity-90"
       />
 
       {/* Radiant Signature Gradient Spotlight Auras */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-[#F31A3E]/22 via-[#7A2397]/20 via-[#1D16EF]/18 to-[#03A7AE]/18 rounded-full blur-[130px] pointer-events-none animate-pulse-slow" />
-      <div className="absolute top-2/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#1D16EF]/15 via-[#F31A3E]/15 to-[#FB5521]/12 rounded-full blur-[110px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-gradient-to-tl from-[#03A7AE]/15 via-[#7A2397]/15 to-transparent rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-[#ffc900]/22 via-[#ffc900]/20 via-[#ffc900]/18 to-[#ffc900]/18 rounded-full blur-[130px] pointer-events-none animate-pulse-slow" />
+      <div className="absolute top-2/3 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#ffc900]/15 via-[#ffc900]/15 to-[#ffc900]/12 rounded-full blur-[110px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-gradient-to-tl from-[#ffc900]/15 via-[#ffc900]/15 to-transparent rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex-1 flex flex-col justify-center items-center h-full">
-        
-
-        {/* Main Editorial Headline with 3D Perspective Tilt Depth */}
-        <motion.div 
-          style={{ rotateX: tiltX, rotateY: tiltY, transformPerspective: 1000 }}
-          className="text-center max-w-5xl mx-auto my-auto py-2 sm:py-4 transition-transform duration-100 ease-out"
-        >
+      <div className="apex-hero-content relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-10 text-center sm:px-6 sm:py-14 lg:px-8">
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-4xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-heading font-black tracking-tight leading-[0.92] uppercase select-none drop-shadow-sm"
+            transition={{ duration: 0.65, delay: 0.12 }}
+            className="apex-hero-title font-heading font-black uppercase leading-[0.82] tracking-[-0.07em] drop-shadow-sm"
           >
-            <span className="block text-[#0B0B0F] hover:tracking-normal transition-all duration-300">
-              IDEAS.
-            </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0B0B0F] via-[#7A2397] to-[#1D16EF] hover:brightness-110 transition-all duration-300">
-              VISUALS.
-            </span>
-            <span className="block apex-gradient-text drop-shadow-[0_10px_40px_rgba(243,26,62,0.4)] animate-pulse-slow">
-              IMPACT.
-            </span>
+            <span className="block text-[#080908]">IDEAS.</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#080908] via-[#ffc900] to-[#ffc900]">VISUALS.</span>
+            <span className="block apex-gradient-text drop-shadow-[0_10px_40px_rgba(255,201,0,0.2)]">IMPACT.</span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-lg text-[#0B0B0F]/85 max-w-3xl mx-auto font-sans font-normal leading-relaxed text-balance"
+            transition={{ duration: 0.6, delay: 0.24 }}
+            className="mx-auto mt-6 max-w-2xl text-sm font-sans leading-relaxed text-[#080908]/80 sm:mt-7 sm:text-base lg:text-lg"
           >
-            APEX CREATIVE is a next-generation design and digital marketing agency combining strategy, visual craft, 3D direction, and digital growth under one roof.
+            Strategy, visual craft, 3D direction, and digital growth, brought together under one roof.
           </motion.p>
 
-          {/* Action CTAs — Standout High-Impact Highlight with Tactile Physics */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5"
+            transition={{ duration: 0.6, delay: 0.34 }}
+            className="mt-7 flex w-full flex-col items-center justify-center gap-3.5 sm:w-auto sm:flex-row sm:gap-5"
           >
-            <motion.div
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full sm:w-auto"
-            >
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
               <Link
                 href="/services"
-                className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full apex-gradient-bg text-[#FCFCFD] font-heading font-bold text-xs uppercase tracking-widest shadow-xl shadow-[#F31A3E]/30 hover:shadow-[#F31A3E]/50 transition-all duration-300 group overflow-hidden"
+                className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full apex-gradient-bg px-8 py-4 font-heading text-xs font-black uppercase tracking-[0.14em] shadow-xl shadow-[#ffc900]/30 transition-all duration-300 hover:shadow-[#ffc900]/50 sm:w-auto"
               >
-                {/* Shimmer Light Flare Effect */}
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
-                <span className="relative z-10">
-                  Explore Our Services
-                </span>
+                <span className="pointer-events-none absolute inset-0 h-full w-full -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-x-full" />
+                <span className="relative z-10">Explore our services</span>
               </Link>
             </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full sm:w-auto"
-            >
+            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }} className="w-full sm:w-auto">
               <Link
                 href="/contact"
-                className="relative w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#0B0B0F] text-[#FCFCFD] font-heading font-bold text-xs uppercase tracking-widest hover:bg-[#7A2397] transition-all duration-300 shadow-lg shadow-[#0B0B0F]/20 border border-white/10 group"
+                className="inline-flex w-full items-center justify-center rounded-full border border-[#080908]/20 bg-[#080908] px-8 py-4 font-heading text-xs font-bold uppercase tracking-[0.14em] text-[#f5f3ef] shadow-lg shadow-[#080908]/20 transition-all duration-300 hover:bg-[#ffc900] hover:text-[#080908] sm:w-auto"
               >
-                <span>Initiate Project Brief</span>
+                Start a project
               </Link>
             </motion.div>
           </motion.div>
-        </motion.div>
+
+        </div>
       </div>
     </section>
   );

@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenGovernance }) =
     window.addEventListener('resize', handleResize);
 
     // Official APEX Brand Colors for Particles
-    const colors = ['#F31A3E', '#DC175B', '#7A2397', '#1D16EF'];
+    const colors = ['#ffc900', '#ffc900', '#ffc900', '#ffc900'];
 
     const particles: Array<{
       x: number;
@@ -89,15 +89,15 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenGovernance }) =
   }, []);
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-[#FCFCFD] text-[#0B0B0F]">
+    <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-[#f5f3ef] text-[#080908]">
       {/* Interactive Particle & Gradient Flow Canvas */}
-      <canvas 
-        ref={canvasRef} 
+      <canvas
+        ref={canvasRef}
         className="absolute inset-0 pointer-events-none z-0 opacity-70"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Top Tagline Pill */}
         <div className="flex justify-center mb-8">
           <motion.div
@@ -115,7 +115,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenGovernance }) =
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black tracking-tight leading-[0.95] text-[#0B0B0F]"
+            className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black tracking-tight leading-[0.95] text-[#080908]"
           >
             ENGINEERING BOLD <br className="hidden sm:block" />
             <span className="apex-gradient-text uppercase">VISUAL IMPACT</span>
@@ -125,7 +125,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenGovernance }) =
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-8 text-lg sm:text-xl lg:text-2xl text-[#0B0B0F]/75 max-w-3xl mx-auto font-sans font-normal leading-relaxed"
+            className="mt-8 text-lg sm:text-xl lg:text-2xl text-[#080908]/75 max-w-3xl mx-auto font-sans font-normal leading-relaxed"
           >
             APEX CREATIVE is the high-precision digital design studio engineering world-class visual identities, dynamic motion systems, and digital flagship experiences.
           </motion.p>
@@ -141,14 +141,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenGovernance }) =
           <a
             href="#work"
             onClick={onExploreWork}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#0B0B0F] text-[#FCFCFD] font-heading font-bold text-xs uppercase tracking-widest shadow-xl shadow-[#0B0B0F]/20 hover:shadow-2xl hover:shadow-[#F31A3E]/30 hover:scale-[1.02] transition-all duration-300 group"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#080908] text-[#f5f3ef] font-heading font-bold text-xs uppercase tracking-widest shadow-xl shadow-[#080908]/20 hover:shadow-2xl hover:shadow-[#ffc900]/30 hover:scale-[1.02] transition-all duration-300 group"
           >
             <span>Explore Selected Work</span>
           </a>
 
           <button
             onClick={onOpenGovernance}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#0B0B0F]/5 border border-[#0B0B0F]/15 text-[#0B0B0F] font-heading font-bold text-xs uppercase tracking-widest hover:bg-[#0B0B0F] hover:text-[#FCFCFD] hover:border-[#0B0B0F] transition-all duration-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#080908]/5 border border-[#080908]/15 text-[#080908] font-heading font-bold text-xs uppercase tracking-widest hover:bg-[#080908] hover:text-[#f5f3ef] hover:border-[#080908] transition-all duration-300"
           >
             <span>Brand Governance Portal</span>
           </button>
@@ -159,7 +159,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenGovernance }) =
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-3xl bg-white/80 border border-[#0B0B0F]/10 shadow-xl backdrop-blur-md"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-3xl bg-[#f5f3ef]/80 border border-[#080908]/10 shadow-xl backdrop-blur-md"
         >
           {[
             { metric: '150+', label: 'Global Campaigns' },
@@ -168,11 +168,11 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onOpenGovernance }) =
             { metric: '4.9/5', label: 'Enterprise Impact Score' }
           ].map((item, idx) => {
             return (
-              <div key={idx} className="flex flex-col items-center text-center p-4 border-r last:border-r-0 border-[#0B0B0F]/10">
-                <span className="text-3xl lg:text-4xl font-heading font-black text-[#0B0B0F] tracking-tight">
+              <div key={idx} className="flex flex-col items-center text-center p-4 border-r last:border-r-0 border-[#080908]/10">
+                <span className="text-3xl lg:text-4xl font-heading font-black text-[#080908] tracking-tight">
                   {item.metric}
                 </span>
-                <span className="text-xs font-mono uppercase tracking-wider text-[#0B0B0F]/60 mt-1">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#080908]/60 mt-1">
                   {item.label}
                 </span>
               </div>
