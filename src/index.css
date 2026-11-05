@@ -214,6 +214,16 @@
   border-color: rgb(245 243 239 / 20%) !important;
 }
 
+:root[data-theme='dark'] .navbar-theme-toggle {
+  color: #f5f3ef !important;
+  -webkit-text-fill-color: #f5f3ef !important;
+}
+
+:root[data-theme='light'] .navbar-theme-toggle {
+  color: #080908 !important;
+  -webkit-text-fill-color: #080908 !important;
+}
+
 :root[data-theme='dark'] .services-pillar-capsule:hover {
   color: #ffc900 !important;
   -webkit-text-fill-color: #ffc900 !important;

@@ -7,7 +7,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Moon, Sun } from 'lucide-react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
-import apexLogo from '@/assets/logo.png';
+import lightThemeLogo from '@/assets/black-logo.png';
+import darkThemeLogo from '@/assets/logo.png';
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -92,11 +93,11 @@ export const Navbar: React.FC = () => {
 
           {/* Logo Brand Touchpoint */}
           <Link href="/" className="inline-flex items-center group focus:outline-none">
-            <Image src={apexLogo} alt="APEX CREATIVE" priority className="h-10 w-auto select-none object-contain" />
+            <Image src={theme === 'light' ? lightThemeLogo : darkThemeLogo} alt="APEX CREATIVE" priority className="h-10 w-auto select-none object-contain" />
           </Link>
 
           {/* Desktop Multi-Page Route Links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:ml-auto md:mr-8 md:flex items-center gap-8">
             {navItems.map((item) => {
               const isActive = pathname === item.href || (item.href !== '/' && pathname?.startsWith(item.href));
               return (
@@ -125,9 +126,11 @@ export const Navbar: React.FC = () => {
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
               title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
-              className={`inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors hover:bg-[#ffc900] hover:text-[#080908] ${mobileMenuOpen ? 'border-white/20 text-[#f5f3ef]' : 'border-[#080908]/15 text-[#080908]'}`}
+              className={`navbar-theme-toggle inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors hover:bg-[#ffc900] hover:text-[#080908] ${theme === 'dark' ? 'border-white/20 text-[#f5f3ef]' : 'border-[#080908]/15 text-[#080908]'}`}
             >
-              {theme === 'light' ? <Moon size={17} /> : <Sun size={17} />}
+              {theme === 'light'
+                ? <Moon size={17} color="#080908" />
+                : <Sun size={17} color="#f5f3ef" />}
             </button>
             <Link
               href="/contact"
@@ -147,9 +150,11 @@ export const Navbar: React.FC = () => {
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
               title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
-              className={`inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors hover:bg-[#ffc900] hover:text-[#080908] ${mobileMenuOpen ? 'border-white/20 text-[#f5f3ef]' : 'border-[#080908]/15 text-[#080908]'}`}
+              className={`navbar-theme-toggle inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors hover:bg-[#ffc900] hover:text-[#080908] ${theme === 'dark' ? 'border-white/20 text-[#f5f3ef]' : 'border-[#080908]/15 text-[#080908]'}`}
             >
-              {theme === 'light' ? <Moon size={17} /> : <Sun size={17} />}
+              {theme === 'light'
+                ? <Moon size={17} color="#080908" />
+                : <Sun size={17} color="#f5f3ef" />}
             </button>
             <motion.button
               whileTap={{ scale: 0.92 }}

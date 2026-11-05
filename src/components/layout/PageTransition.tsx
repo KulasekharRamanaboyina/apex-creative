@@ -9,7 +9,6 @@ import apexLogo from '@/assets/logo.png';
 export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(true);
-  const [loadingProgress, setLoadingProgress] = useState(0);
   const [routeChanging, setRouteChanging] = useState(false);
 
   // Initial High-End Splash Loader Effect
@@ -22,26 +21,12 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ childr
       return;
     }
 
-    // Step-wise progress counter for realistic luxury load feel
-    const duration = 1200; // 1.2s total
-    const intervalTime = 30;
-    const increment = 100 / (duration / intervalTime);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      sessionStorage.setItem('apex_initial_splash_shown', 'true');
+    }, 1650);
 
-    const interval = setInterval(() => {
-      setLoadingProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => {
-            setIsLoading(false);
-            sessionStorage.setItem('apex_initial_splash_shown', 'true');
-          }, 200);
-          return 100;
-        }
-        return Math.min(prev + increment, 100);
-      });
-    }, intervalTime);
-
-    return () => clearInterval(interval);
+    return () => clearTimeout(timer);
   }, []);
 
   // Top Page Route Progress Bar on Navigation
@@ -75,21 +60,52 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ childr
         {isLoading && (
           <motion.div
             key="initial-splash-curtain"
-            initial={{ y: 0 }}
-            exit={{ y: '-100%' }}
-            transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[99999] bg-[#080908] text-[#f5f3ef] flex flex-col items-center justify-center overflow-hidden pointer-events-auto"
+            initial={{ clipPath: 'inset(0 0 0 0)' }}
+            exit={{ clipPath: 'inset(0 0 100% 0)' }}
+            transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1] }}
+            className="fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden bg-[#080908] pointer-events-auto"
           >
-            {/* Ambient Background Gradient Aura */}
-            <div className="absolute w-[500px] h-[500px] bg-gradient-to-tr from-[#ffc900]/20 via-[#ffc900]/20 to-[#ffc900]/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
-
-            <div className="relative z-10 flex flex-col items-center space-y-8 px-4 text-center">
-              {/* Animated Brand Logo */}
+            <motion.div
+              aria-hidden="true"
+              initial={{ opacity: 0, scale: 0.72, rotate: -35 }}
+              animate={{ opacity: [0, 0.7, 0.45], scale: [0.72, 1, 1.08], rotate: 0 }}
+              transition={{ duration: 1.25, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute h-64 w-64 rounded-full border border-[#ffc900]/20 sm:h-80 sm:w-80"
+            />
+            <motion.div
+              aria-hidden="true"
+              initial={{ opacity: 0, scale: 0.8, rotate: 25 }}
+              animate={{ opacity: [0, 0.45, 0.25], scale: [0.8, 1, 1.12], rotate: 0 }}
+              transition={{ duration: 1.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute h-80 w-80 rounded-full border border-dashed border-[#f5f3ef]/10 sm:h-[26rem] sm:w-[26rem]"
+            />
+            <motion.div
+              aria-hidden="true"
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={{ scaleX: [0, 1, 0.85], opacity: [0, 0.7, 0.35] }}
+              transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute h-px w-72 bg-gradient-to-r from-transparent via-[#ffc900]/50 to-transparent sm:w-[26rem]"
+            />
+            <motion.div
+              aria-hidden="true"
+              initial={{ opacity: 0, scale: 0.4 }}
+              animate={{ opacity: [0, 0.8, 0.4], scale: [0.4, 1, 0.8] }}
+              transition={{ duration: 0.7, delay: 0.55, ease: 'easeOut' }}
+              className="absolute h-1.5 w-1.5 translate-x-32 rounded-full bg-[#ffc900] shadow-[0_0_14px_rgba(255,201,0,0.9)] sm:translate-x-40"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.76, y: 24, rotateX: 12, filter: 'blur(18px)' }}
+              animate={{ opacity: 1, scale: 1, y: 0, rotateX: 0, filter: 'blur(0px)' }}
+              transition={{
+                type: 'spring',
+                stiffness: 115,
+                damping: 16,
+                delay: 0.08,
+              }}
+            >
               <motion.div
-                initial={{ opacity: 0, y: 14, scale: 0.96, filter: 'blur(12px)' }}
-                animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
-                transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="relative drop-shadow-[0_0_24px_rgba(255,201,0,0.18)]"
+                animate={{ y: [0, -4, 0], scale: [1, 1.025, 1] }}
+                transition={{ duration: 2.4, ease: 'easeInOut', repeat: Infinity, delay: 0.85 }}
               >
                 <Image
                   src={apexLogo}
@@ -98,42 +114,7 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ childr
                   className="h-auto w-40 select-none object-contain sm:w-48"
                 />
               </motion.div>
-
-              <motion.div
-                aria-hidden="true"
-                initial={{ scaleX: 0, opacity: 0 }}
-                animate={{ scaleX: 1, opacity: 1 }}
-                transition={{ duration: 0.65, delay: 0.38, ease: [0.22, 1, 0.36, 1] }}
-                className="h-px w-24 origin-center bg-gradient-to-r from-transparent via-[#ffc900] to-transparent"
-              />
-
-              {/* Brand Tagline */}
-              <div className="space-y-2">
-                <motion.p
-                  initial={{ opacity: 0, y: 8, letterSpacing: '0.12em' }}
-                  animate={{ opacity: 0.7, y: 0, letterSpacing: '0.25em' }}
-                  transition={{ delay: 0.5, duration: 0.55, ease: 'easeOut' }}
-                  className="text-[11px] font-mono tracking-[0.25em] text-[#f5f3ef]/70 uppercase"
-                >
-                  IDEAS · VISUALS · IMPACT
-                </motion.p>
-              </div>
-
-              {/* High-Precision Progress Bar & Counter */}
-              <div className="w-48 sm:w-64 space-y-2">
-                <div className="h-[2px] w-full bg-[#f5f3ef]/10 rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full w-full origin-left apex-gradient-bg"
-                    style={{ scaleX: loadingProgress / 100 }}
-                    transition={{ duration: 0.12, ease: 'linear' }}
-                  />
-                </div>
-                <div className="flex justify-between items-center text-[10px] font-mono text-[#f5f3ef]/50 tracking-wider">
-                  <span>INITIALIZING STUDIO ARCHITECTURE</span>
-                  <span className="font-bold text-[#ffc900]">{Math.round(loadingProgress)}%</span>
-                </div>
-              </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
