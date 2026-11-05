@@ -22,7 +22,7 @@ export const CONCEPT_PROJECTS: ConceptProject[] = [
     category: 'Brand Identity',
     tagline: 'Self-initiated brand identity & 3D vehicle presentation exploration',
     image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-    gradient: 'from-[#F31A3E] to-[#7A2397]',
+    gradient: 'from-[#ffc900] to-[#ffc900]',
     overview: 'An APEX Creative Lab exploration into aerodynamic brand geometry, custom gradient lighting, and digital flagship architecture for a theoretical autonomous electric vehicle brand.',
     designExploration: [
       'Geometric letterform construction based on wind-tunnel dynamics.',
@@ -48,10 +48,10 @@ export const CONCEPT_PROJECTS: ConceptProject[] = [
     category: 'Digital Experience',
     tagline: 'Experimental dark-theme audio UI & WebGL soundwave showcase',
     image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80',
-    gradient: 'from-[#7A2397] to-[#1D16EF]',
+    gradient: 'from-[#ffc900] to-[#ffc900]',
     overview: 'A creative lab study investigating how web animation physics and tactile dark-mode typography can convey physical sound resonance on digital screens.',
     designExploration: [
-      'Tactile dark glassmorphism surfaces (#0B0B0F Ink Black base).',
+      'Tactile dark glassmorphism surfaces (#080908 Ink Black base).',
       'Interactive WebGL audio visualizer responsive to cursor gestures.',
       'Precision typographic layout utilizing Montserrat display weights.'
     ],
@@ -74,10 +74,10 @@ export const CONCEPT_PROJECTS: ConceptProject[] = [
     category: 'Creative Direction',
     tagline: 'High-frequency financial intelligence interface & visual strategy',
     image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80',
-    gradient: 'from-[#DC175B] to-[#1D16EF]',
+    gradient: 'from-[#ffc900] to-[#ffc900]',
     overview: 'An internal design exploration reimagining complex financial data streams into clean, highly legible visual typography and precision metric accents.',
     designExploration: [
-      'Teal (#03A7AE) metric highlights paired with Electric Blue anchors.',
+      'Teal (#ffc900) metric highlights paired with Electric Blue anchors.',
       'Zero-clutter tabular typography for millisecond data readability.',
       'Modular dashboard grid system designed for multi-monitor setups.'
     ],
@@ -89,7 +89,7 @@ export const CONCEPT_PROJECTS: ConceptProject[] = [
     specs: [
       { label: 'Project Type', value: 'APEX Financial Concept' },
       { label: 'Grid Architecture', value: '12-Column Responsive Layout' },
-      { label: 'Accent Tokens', value: '#03A7AE Teal & Electric Blue' }
+      { label: 'Accent Tokens', value: '#ffc900 Teal & Electric Blue' }
     ]
   },
   {
@@ -100,7 +100,7 @@ export const CONCEPT_PROJECTS: ConceptProject[] = [
     category: '3D & Visual Motion',
     tagline: 'Spatial computing visual identity & volumetric shader exploration',
     image: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1200&q=80',
-    gradient: 'from-[#F31A3E] to-[#FB5521]',
+    gradient: 'from-[#ffc900] to-[#ffc900]',
     overview: 'A futuristic design exploration examining brand identity performance within 3D augmented reality and spatial display environments.',
     designExploration: [
       'Luminous gradient motion loops transitioning Flame Orange to Crimson.',

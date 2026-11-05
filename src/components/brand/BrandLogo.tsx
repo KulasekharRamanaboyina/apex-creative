@@ -31,7 +31,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   };
 
   return (
-    <div 
+    <div
       className={`relative inline-flex items-center justify-center transition-transform duration-300 ${className}`}
       style={{
         // Clear space: at minimum preserve whitespace around logo equal to height of X in APEX (~18% of logo height)
@@ -40,11 +40,11 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       title="Official APEX CREATIVE Primary Logo Lockup"
     >
       {showClearSpaceGrid && (
-        <div 
-          className="absolute inset-0 border border-dashed border-[#F31A3E]/40 bg-[#F31A3E]/5 pointer-events-none rounded transition-all"
+        <div
+          className="absolute inset-0 border border-dashed border-[#ffc900]/40 bg-[#ffc900]/5 pointer-events-none rounded transition-all"
           style={{ padding: `${Math.round(enforcedWidth * 0.08)}px` }}
         >
-          <span className="absolute top-0.5 right-1 text-[9px] font-mono text-[#F31A3E] uppercase tracking-wider font-semibold">
+          <span className="absolute top-0.5 right-1 text-[9px] font-mono text-[#ffc900] uppercase tracking-wider font-semibold">
             Clear Space 1X Height
           </span>
         </div>

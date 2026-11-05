@@ -12,21 +12,21 @@ export const metadata = constructMetadata({
 
 export default function HomePage() {
   return (
-    <div className="bg-[#FCFCFD] text-[#0B0B0F]">
-      
+    <div className="bg-[#f5f3ef] text-[#080908]">
+
       {/* 01 — ATTRACTIVE LANDING HERO */}
       <LandingHero />
 
       <BrandGradientDivider height="h-[2px]" animated={true} />
 
       {/* 02 — WHAT APEX IS (BUSINESS POSITIONING STATEMENT) */}
-      <section className="py-20 sm:py-28 bg-[#0B0B0F] text-[#FCFCFD] relative overflow-hidden">
+      <section className="py-20 sm:py-28 bg-[#080908] text-[#f5f3ef] relative overflow-hidden">
         {/* Background Precision Blueprint Micro-Grid & Radial Glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(#FCFCFD_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.04] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#F31A3E]/15 via-[#7A2397]/10 to-[#03A7AE]/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#f5f3ef_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.04] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#ffc900]/15 via-[#ffc900]/10 to-[#ffc900]/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-[10px] font-mono font-bold text-[#F31A3E] uppercase tracking-widest border border-white/10 mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f5f3ef]/10 text-[10px] font-mono font-bold text-[#ffc900] uppercase tracking-widest border border-white/10 mb-6">
             <span>BUSINESS POSITIONING STATEMENT</span>
           </div>
 
@@ -35,21 +35,21 @@ export default function HomePage() {
             BUILT TO <span className="apex-gradient-text">THINK DIFFERENTLY.</span>
           </h2>
 
-          <p className="text-base sm:text-xl text-white/80 font-sans leading-relaxed max-w-3xl mx-auto mb-10">
+          <p className="text-base sm:text-xl text-[#f5f3ef]/80 font-sans leading-relaxed max-w-3xl mx-auto mb-10">
             APEX CREATIVE carries zero legacy baggage. We combine strategic brand positioning, high-impact 3D visual craft, custom web app architecture, and performance SEO under one unified roof.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/about"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full apex-gradient-bg text-white text-xs font-heading font-bold uppercase tracking-widest hover:scale-105 shadow-xl shadow-[#F31A3E]/20 transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full apex-gradient-bg text-[#f5f3ef] text-xs font-heading font-bold uppercase tracking-widest hover:scale-105 shadow-xl shadow-[#ffc900]/20 transition-all duration-300"
             >
               <span>Our Story & Philosophy</span>
             </Link>
 
             <Link
               href="/approach"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-heading font-bold uppercase tracking-widest border border-white/15 transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#f5f3ef]/10 hover:bg-[#f5f3ef]/20 text-[#f5f3ef] text-xs font-heading font-bold uppercase tracking-widest border border-white/15 transition-all duration-300"
             >
               <span>Explore 5-Stage Framework</span>
             </Link>
@@ -64,18 +64,18 @@ export default function HomePage() {
       <HomeMethodology />
 
       {/* 05 — WHY APEX (THE NEW AGENCY ADVANTAGE) */}
-      <section className="py-20 sm:py-28 bg-[#0B0B0F] text-[#FCFCFD] relative overflow-hidden border-t border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(#FCFCFD_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none" />
+      <section className="py-20 sm:py-28 bg-[#080908] text-[#f5f3ef] relative overflow-hidden border-t border-white/10">
+        <div className="absolute inset-0 bg-[radial-gradient(#f5f3ef_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#03A7AE] block mb-2">
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#ffc900] block mb-2">
               The Advantage of Being New
             </span>
             <h2 className="text-3xl sm:text-5xl font-heading font-black tracking-tight uppercase">
               WHY WORK WITH <span className="apex-gradient-text">APEX?</span>
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-white/70 font-sans leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-[#f5f3ef]/70 font-sans leading-relaxed">
               We operate without junior account hand-offs, template formulas, or unnecessary agency bureaucracy.
             </p>
           </div>
@@ -86,35 +86,35 @@ export default function HomePage() {
                 num: '01',
                 title: 'NO LEGACY THINKING',
                 desc: 'Clean-slate strategic direction built for modern digital channels, not outdated agency playbooks.',
-                accent: 'border-l-[#F31A3E]',
-                numColor: 'text-[#F31A3E]'
+                accent: 'border-l-[#ffc900]',
+                numColor: 'text-[#ffc900]'
               },
               {
                 num: '02',
                 title: 'FOUNDER-DRIVEN CRAFT',
                 desc: 'Direct access to senior creative strategists and technical engineers on every brief.',
-                accent: 'border-l-[#7A2397]',
-                numColor: 'text-[#7A2397]'
+                accent: 'border-l-[#ffc900]',
+                numColor: 'text-[#ffc900]'
               },
               {
                 num: '03',
                 title: 'DESIGN + DIGITAL GROWTH',
                 desc: 'Unifying editorial brand craft with sub-second Next.js web code and performance SEO.',
-                accent: 'border-l-[#03A7AE]',
-                numColor: 'text-[#03A7AE]'
+                accent: 'border-l-[#ffc900]',
+                numColor: 'text-[#ffc900]'
               }
             ].map((item, i) => (
               <div
                 key={i}
-                className={`p-8 rounded-3xl bg-white/[0.03] border border-white/10 ${item.accent} border-l-4 space-y-4 hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 shadow-xl`}
+                className={`p-8 rounded-3xl bg-[#f5f3ef]/[0.03] border border-white/10 ${item.accent} border-l-4 space-y-4 hover:bg-[#f5f3ef]/[0.06] hover:border-white/20 transition-all duration-300 shadow-xl`}
               >
                 <div className={`text-xs font-mono font-bold ${item.numColor} tracking-widest uppercase`}>
                   DIRECTIVE {item.num}
                 </div>
-                <h3 className="text-lg font-heading font-black tracking-tight text-[#FCFCFD]">
+                <h3 className="text-lg font-heading font-black tracking-tight text-[#f5f3ef]">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-white/70 font-sans leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#f5f3ef]/70 font-sans leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -124,11 +124,11 @@ export default function HomePage() {
       </section>
 
       {/* 06 — STRONG CALL TO ACTION */}
-      <section className="py-24 sm:py-32 bg-[#0B0B0F] text-[#FCFCFD] text-center relative overflow-hidden border-t border-white/10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#F31A3E]/15 via-[#7A2397]/10 to-[#1D16EF]/10 rounded-full blur-[140px] pointer-events-none" />
+      <section className="py-24 sm:py-32 bg-[#080908] text-[#f5f3ef] text-center relative overflow-hidden border-t border-white/10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#ffc900]/15 via-[#ffc900]/10 to-[#ffc900]/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-[10px] font-mono font-bold text-[#03A7AE] uppercase tracking-widest border border-white/10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f5f3ef]/10 text-[10px] font-mono font-bold text-[#ffc900] uppercase tracking-widest border border-white/10">
             <span>START A PROJECT</span>
           </div>
 
@@ -137,21 +137,21 @@ export default function HomePage() {
             <span className="apex-gradient-text">WORTH REMEMBERING?</span>
           </h2>
 
-          <p className="text-sm sm:text-lg text-white/70 max-w-2xl mx-auto font-sans leading-relaxed">
+          <p className="text-sm sm:text-lg text-[#f5f3ef]/70 max-w-2xl mx-auto font-sans leading-relaxed">
             Let's discuss how APEX can engineer your visual identity and digital growth system.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-9 py-4 rounded-full apex-gradient-bg text-white font-heading font-bold text-xs uppercase tracking-widest shadow-2xl shadow-[#F31A3E]/30 hover:scale-105 transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-9 py-4 rounded-full apex-gradient-bg text-[#f5f3ef] font-heading font-bold text-xs uppercase tracking-widest shadow-2xl shadow-[#ffc900]/30 hover:scale-105 transition-all duration-300"
             >
               <span>Initiate Project Brief</span>
             </Link>
 
             <Link
               href="/services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-heading font-bold text-xs uppercase tracking-widest border border-white/15 transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full bg-[#f5f3ef]/10 hover:bg-[#f5f3ef]/20 text-[#f5f3ef] font-heading font-bold text-xs uppercase tracking-widest border border-white/15 transition-all duration-300"
             >
               <span>Explore Capabilities</span>
             </Link>

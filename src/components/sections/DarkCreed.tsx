@@ -5,14 +5,14 @@ import { BrandGradientDivider } from '../brand/BrandGradientDivider';
 
 export const DarkCreed: React.FC<{ onOpenGovernance: () => void }> = ({ onOpenGovernance }) => {
   return (
-    <section className="py-28 bg-[#0B0B0F] text-[#FCFCFD] relative overflow-hidden my-12 border-y border-white/10">
+    <section className="py-28 bg-[#080908] text-[#f5f3ef] relative overflow-hidden my-12 border-y border-white/10">
       {/* Signature Gradient Radial Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#F31A3E]/15 via-[#7A2397]/15 to-[#1D16EF]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#ffc900]/15 via-[#ffc900]/15 to-[#ffc900]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        
+
         {/* Official Dark Variant Logo Asset Display */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -22,7 +22,7 @@ export const DarkCreed: React.FC<{ onOpenGovernance: () => void }> = ({ onOpenGo
           <BrandLogo variant="dark" width={220} />
         </motion.div>
 
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -32,14 +32,14 @@ export const DarkCreed: React.FC<{ onOpenGovernance: () => void }> = ({ onOpenGo
           WE ENGINEER <span className="apex-gradient-text">UNAPOLOGETIC IMPACT."</span>
         </motion.h2>
 
-        <p className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto font-sans leading-relaxed mb-10">
+        <p className="text-base sm:text-lg text-[#f5f3ef]/70 max-w-2xl mx-auto font-sans leading-relaxed mb-10">
           Every vector line, signature gradient stop, and Montserrat letterform is strictly calibrated to represent leadership at the highest level.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={onOpenGovernance}
-            className="px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-[#FCFCFD] font-heading font-bold text-xs uppercase tracking-widest border border-white/20 transition-all duration-300"
+            className="px-8 py-4 rounded-full bg-[#f5f3ef]/10 hover:bg-[#f5f3ef]/20 text-[#f5f3ef] font-heading font-bold text-xs uppercase tracking-widest border border-white/20 transition-all duration-300"
           >
             <span>Verify Brand Governance Audit</span>
           </button>

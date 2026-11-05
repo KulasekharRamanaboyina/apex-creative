@@ -34,8 +34,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${inter.variable} scroll-smooth`}>
-      <body className="bg-[#FCFCFD] text-[#0B0B0F] antialiased selection:bg-[#F31A3E] selection:text-white font-sans overflow-x-hidden min-h-screen flex flex-col justify-between">
+    <html lang="en" className={`${montserrat.variable} ${inter.variable} scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => { try { const saved = localStorage.getItem('apex-theme'); const theme = saved === 'light' || saved === 'dark' ? saved : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); document.documentElement.dataset.theme = theme; } catch { document.documentElement.dataset.theme = 'light'; } })();`,
+          }}
+        />
+      </head>
+      <body className="bg-[#f5f3ef] text-[#080908] antialiased selection:bg-[#ffc900] selection:text-[#080908] font-sans overflow-x-hidden min-h-screen flex flex-col justify-between">
         <Navbar />
         <main className="flex-grow flex flex-col">
           <PageTransition>

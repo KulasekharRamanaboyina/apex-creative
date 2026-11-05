@@ -47,7 +47,7 @@ Modern audiences do not scroll past bold visual identity — they pause. When a 
 Whitespace around a primary logo lockup is not empty real estate — it is an active margin of focus. Preserving whitespace equal to at least 1X the height of the primary emblem ensures the brand identity is never crowded or visually compromised by competing UI elements.
 
 ### 2. The Signature Gradient Accent
-A common misconception is that brand gradients must saturate every surface. The APEX brand philosophy dictates that signature gradients must be applied **SPARINGLY** — reserved for hero accents, kinetic dividers, hover states, and dynamic typography moments over a high-contrast base of Paper White (\`#FCFCFD\`) and Ink Black (\`#0B0B0F\`).
+A common misconception is that brand gradients must saturate every surface. The APEX brand philosophy dictates that signature gradients must be applied **SPARINGLY** — reserved for hero accents, kinetic dividers, hover states, and dynamic typography moments over a high-contrast base of Paper White (\`#f5f3ef\`) and Ink Black (\`#080908\`).
 
 ### 3. Typography as Architecture
 Pairing a bold, engineered display typeface like **Montserrat** with a clean, highly legible body font like **Inter** creates a structural hierarchy that directs reader focus seamlessly.
@@ -156,7 +156,7 @@ The solution is a single source of truth: **Design Tokens**.
 ## Token Hierarchy Structure
 
 We structure design token systems into three strict layers:
-1. **Global Tokens**: Raw values such as \`#F31A3E\` (Crimson) or \`Montserrat\`.
+1. **Global Tokens**: Raw values such as \`#ffc900\` (Crimson) or \`Montserrat\`.
 2. **Alias/Semantic Tokens**: Contextual meanings like \`color-brand-primary\` or \`font-heading-display\`.
 3. **Component Tokens**: Element-specific scopes such as \`button-bg-hover\` or \`card-border-active\`.
 
@@ -221,7 +221,7 @@ The answer lies in micro-visual signals: typography line-height, letter-spacing 
 
 When an interface gives content room to breathe, it communicates confidence. Cluttered interfaces filled with competing call-to-action badges signals desperation.
 
-By pairing ultra-bold headline lockups in **Montserrat** with quiet, generous margins and crisp dark backgrounds (\`#0B0B0F\`), brands establish an atmosphere of unshakeable authority.
+By pairing ultra-bold headline lockups in **Montserrat** with quiet, generous margins and crisp dark backgrounds (\`#080908\`), brands establish an atmosphere of unshakeable authority.
     `
   }
 ];
