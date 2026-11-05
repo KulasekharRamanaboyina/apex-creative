@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import apexLogo from '@/assets/logo.png';
 
 export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const pathname = usePathname();
@@ -82,35 +84,35 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ childr
             <div className="absolute w-[500px] h-[500px] bg-gradient-to-tr from-[#ffc900]/20 via-[#ffc900]/20 to-[#ffc900]/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
 
             <div className="relative z-10 flex flex-col items-center space-y-8 px-4 text-center">
-              {/* Animated Icon Mark */}
+              {/* Animated Brand Logo */}
               <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
-                className="relative p-4 rounded-3xl bg-[#f5f3ef]/[0.04] border border-white/10 shadow-2xl"
+                initial={{ opacity: 0, y: 14, scale: 0.96, filter: 'blur(12px)' }}
+                animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="relative drop-shadow-[0_0_24px_rgba(255,201,0,0.18)]"
               >
-                <img
-                  src="/brand/icon/apex-icon-mark.png"
-                  alt="APEX Icon Mark"
-                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain drop-shadow-[0_0_20px_rgba(243,26,62,0.4)]"
+                <Image
+                  src={apexLogo}
+                  alt="APEX CREATIVE"
+                  priority
+                  className="h-auto w-40 select-none object-contain sm:w-48"
                 />
               </motion.div>
 
-              {/* Brand Wordmark & Tagline */}
-              <div className="space-y-2">
-                <motion.h1
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
-                  className="text-2xl sm:text-3xl font-heading font-black tracking-widest text-[#f5f3ef]"
-                >
-                  APEX <span className="apex-gradient-text">CREATIVE</span>
-                </motion.h1>
+              <motion.div
+                aria-hidden="true"
+                initial={{ scaleX: 0, opacity: 0 }}
+                animate={{ scaleX: 1, opacity: 1 }}
+                transition={{ duration: 0.65, delay: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                className="h-px w-24 origin-center bg-gradient-to-r from-transparent via-[#ffc900] to-transparent"
+              />
 
+              {/* Brand Tagline */}
+              <div className="space-y-2">
                 <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.7 }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
+                  initial={{ opacity: 0, y: 8, letterSpacing: '0.12em' }}
+                  animate={{ opacity: 0.7, y: 0, letterSpacing: '0.25em' }}
+                  transition={{ delay: 0.5, duration: 0.55, ease: 'easeOut' }}
                   className="text-[11px] font-mono tracking-[0.25em] text-[#f5f3ef]/70 uppercase"
                 >
                   IDEAS · VISUALS · IMPACT
@@ -121,9 +123,9 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ childr
               <div className="w-48 sm:w-64 space-y-2">
                 <div className="h-[2px] w-full bg-[#f5f3ef]/10 rounded-full overflow-hidden">
                   <motion.div
-                    className="h-full apex-gradient-bg"
-                    style={{ width: `${loadingProgress}%` }}
-                    transition={{ ease: 'linear' }}
+                    className="h-full w-full origin-left apex-gradient-bg"
+                    style={{ scaleX: loadingProgress / 100 }}
+                    transition={{ duration: 0.12, ease: 'linear' }}
                   />
                 </div>
                 <div className="flex justify-between items-center text-[10px] font-mono text-[#f5f3ef]/50 tracking-wider">

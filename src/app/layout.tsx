@@ -4,6 +4,7 @@ import '../index.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { PageTransition } from '@/components/layout/PageTransition';
+import apexLogo from '@/assets/logo.png';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   title: 'APEX CREATIVE — IDEAS · VISUALS · IMPACT',
   description: 'Official website of APEX CREATIVE. A new, ambitious creative design and digital marketing agency built to combine strategy, craft, and digital growth.',
   icons: {
-    icon: '/brand/favicon/favicon.png',
+    icon: apexLogo.src,
     apple: '/brand/favicon/apple-touch-icon.png',
   },
 };
