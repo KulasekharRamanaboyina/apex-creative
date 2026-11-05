@@ -1,13 +1,25 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { BrandGradientDivider } from '../brand/BrandGradientDivider';
-import apexLogo from '@/assets/logo.png';
+import lightThemeLogo from '@/assets/black-logo.png';
+import darkThemeLogo from '@/assets/logo.png';
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const syncTheme = () => setTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
+    syncTheme();
+
+    const observer = new MutationObserver(syncTheme);
+    observer.observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -87,7 +99,7 @@ export const Footer: React.FC = () => {
           {/* Column 1: Primary Brand Identity & Studio Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="inline-flex hover:scale-105 transition-transform">
-              <Image src={apexLogo} alt="APEX CREATIVE" width={120} height={59} className="h-12 w-auto object-contain" />
+              <Image src={theme === 'light' ? lightThemeLogo : darkThemeLogo} alt="APEX CREATIVE" width={120} height={59} className="h-12 w-auto object-contain" />
             </div>
 
             <p className="text-xs text-[#f5f3ef]/70 font-sans leading-relaxed max-w-sm">
