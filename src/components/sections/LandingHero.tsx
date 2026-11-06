@@ -3,8 +3,6 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, useMotionValue, useSpring, useMotionTemplate, useTransform } from 'framer-motion';
-import Image from 'next/image';
-import heroArt from '@/assets/hero-art.svg';
 
 export const LandingHero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -206,38 +204,6 @@ export const LandingHero: React.FC = () => {
         ref={canvasRef}
         className="absolute inset-0 h-full w-full pointer-events-none z-0 opacity-90"
       />
-
-      {/* Animated studio artwork accent */}
-      <motion.div
-        aria-hidden="true"
-        initial={{ opacity: 0, x: 48, scale: 0.82, rotate: -12 }}
-        animate={{ opacity: 0.78, x: 0, scale: 1, rotate: 0 }}
-        transition={{ duration: 1.1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="pointer-events-none absolute right-[3%] top-[38%] z-[2] hidden aspect-square w-64 xl:block 2xl:right-[6%] 2xl:top-[36%] 2xl:w-80"
-      >
-        <motion.div
-          animate={{ y: [0, -12, 0], rotate: [0, 2, 0] }}
-          transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity, delay: 1.4 }}
-          className="relative h-full w-full overflow-hidden rounded-[2rem] border border-[#ffc900]/35 bg-[#080908] shadow-[0_28px_90px_rgba(8,9,8,0.3)]"
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_42%,rgba(255,201,0,0.16),transparent_58%)]" />
-          <motion.div
-            aria-hidden="true"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 32, ease: 'linear', repeat: Infinity }}
-            className="absolute inset-5 rounded-full border border-dashed border-white/10"
-          />
-          <Image src={heroArt} alt="" fill priority sizes="(min-width: 1536px) 20rem, 16rem" className="object-contain drop-shadow-[0_22px_32px_rgba(0,0,0,0.32)]" />
-          <div className="absolute inset-x-5 top-5 flex items-center justify-between text-[8px] font-mono uppercase tracking-[0.2em] text-white/60">
-            <span>APEX / VISUAL LAB</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-[#ffc900] shadow-[0_0_10px_rgba(255,201,0,0.9)]" />
-          </div>
-          <div className="absolute inset-x-5 bottom-5 flex items-end justify-between border-t border-white/15 pt-3 text-[8px] font-mono uppercase tracking-[0.18em] text-white/55">
-            <span>Ideas into impact</span>
-            <span className="text-[#ffc900]">01 — 03</span>
-          </div>
-        </motion.div>
-      </motion.div>
 
       {/* Radiant Signature Gradient Spotlight Auras */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] bg-gradient-to-tr from-[#ffc900]/22 via-[#ffc900]/20 via-[#ffc900]/18 to-[#ffc900]/18 rounded-full blur-[130px] pointer-events-none animate-pulse-slow" />
