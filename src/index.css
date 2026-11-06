@@ -148,6 +148,10 @@
   background-color: #f5f3ef !important;
 }
 
+:root[data-theme] .apex-preloader-curtain {
+  background-color: #080908 !important;
+}
+
 :root[data-theme='dark'] [class*="bg-[#f5f3ef]/95"],
 :root[data-theme='dark'] [class*="bg-[#f5f3ef]/98"] {
   background-color: rgb(8 9 8 / 92%) !important;
