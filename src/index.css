@@ -218,6 +218,59 @@
   border-color: rgb(245 243 239 / 20%) !important;
 }
 
+.services-module-title {
+  color: #ffc900 !important;
+  -webkit-text-fill-color: #ffc900 !important;
+}
+
+.about-advantage-heading {
+  color: #ffc900 !important;
+  -webkit-text-fill-color: #ffc900 !important;
+}
+
+.about-philosophy-leadership {
+  color: #ffc900 !important;
+  -webkit-text-fill-color: #ffc900 !important;
+}
+
+:root[data-theme] .about-directive-card {
+  border-left-color: #ffc900 !important;
+}
+
+.about-advantage-section {
+  position: relative;
+  isolation: isolate;
+  padding-block: 2rem;
+}
+
+.about-advantage-section::before {
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  background: #f5f3ef;
+  content: '';
+  transform: translateX(-50%);
+}
+
+:root[data-theme='dark'] .about-advantage-section [class*="text-[#080908]"] {
+  color: #080908 !important;
+  -webkit-text-fill-color: #080908 !important;
+}
+
+:root[data-theme='dark'] .about-advantage-section [class~="bg-[#f5f3ef]"] {
+  background-color: #f5f3ef !important;
+}
+
+:root[data-theme='dark'] .about-advantage-section [class*="border-[#080908]"] {
+  border-color: rgb(8 9 8 / 10%) !important;
+}
+
+:root[data-theme='dark'] .about-advantage-section .about-directive-card {
+  border-left-color: #ffc900 !important;
+}
+
 :root[data-theme='dark'] .navbar-theme-toggle {
   color: #f5f3ef !important;
   -webkit-text-fill-color: #f5f3ef !important;

@@ -120,7 +120,7 @@ export default function ServicesOverviewPage() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-xl sm:text-2xl font-heading font-black tracking-tight text-[#ffc900] transition-colors mb-3">
+                        <h3 className="services-module-title text-xl sm:text-2xl font-heading font-black tracking-tight text-[#ffc900] transition-colors mb-3">
                           {service.title}
                         </h3>
 
