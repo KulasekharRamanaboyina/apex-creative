@@ -63,7 +63,7 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({ childr
             initial={{ clipPath: 'inset(0 0 0 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
             transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden bg-[#080908] pointer-events-auto"
+            className="apex-preloader-curtain fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden bg-[#080908] pointer-events-auto"
           >
             <motion.div
               aria-hidden="true"
