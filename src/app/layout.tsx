@@ -4,7 +4,7 @@ import '../index.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { PageTransition } from '@/components/layout/PageTransition';
-import apexLogo from '@/assets/logo.png';
+import apexLogo from '@/assets/black-logo.png';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
